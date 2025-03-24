@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Compilar Angular
-        run: npm run build -- --configuration=production --base-href /front-meufacilitador/
+        run: npm run build:prod
 
       - name: Deploy para GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
