@@ -41,5 +41,5 @@ jobs:
           # Adiciona o repositório remoto (branch gh-pages)
           git remote add origin https://github.com/${{ github.repository }}.git
 
-          # Push forçando o envio para o branch gh-pages
-          git push --force origin master:gh-pages
+          # Push forçando o envio para o branch gh-pages usando o GITHUB_TOKEN
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git master:gh-pages
