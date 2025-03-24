@@ -1,45 +1,31 @@
-name: Build and Deploy Angular to GitHub Pages
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Altere para a branch principal do seu repositório
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js 18
-        uses: actions/setup-node@v2
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
-      - name: Install dependencies
+      - name: Instalar dependências
         run: npm install
 
-      - name: Build Angular project
-        run: npm run build --prod
+      - name: Compilar Angular
+        run: npm run build -- --configuration=production --base-href /front-meufacilitador/
 
-      - name: Deploy to GitHub Pages
-        run: |
-          # Configura o Git
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-          # Acessa o diretório de build do Angular
-          cd dist/front-meufacilitador  # Substitua com o caminho correto do seu build
-
-          # Inicializa o repositório Git
-          git init
-          git add -A
-          git commit -m "Deploy to GitHub Pages"
-
-          # Adiciona o repositório remoto (branch gh-pages)
-          git remote add origin https://github.com/${{ github.repository }}.git
-
-          # Push forçando o envio para o branch gh-pages usando o GITHUB_TOKEN
-          git push --force https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages
+      - name: Deploy para GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/front-meufacilitador
