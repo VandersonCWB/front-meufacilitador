@@ -42,4 +42,4 @@ jobs:
           git remote add origin https://github.com/${{ github.repository }}.git
 
           # Push forçando o envio para o branch gh-pages usando o GITHUB_TOKEN
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git master:gh-pages
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:gh-pages
