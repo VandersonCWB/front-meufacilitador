@@ -1,40 +1,145 @@
-<div class="container geral">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ appName }}</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container-fluid {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .content {
+            flex: 1;
+        }
+        .footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Cor personalizada para a navbar */
+        .navbar-custom {
+            background-color: #ffdaaa; /* Cor de fundo laranja claro */
+        }
+
+        /* Cor do texto na navbar para garantir contraste */
+        .navbar-custom .navbar-nav .nav-link {
+            color: #333; /* Texto escuro */
+        }
+
+        /* Cor do botão de logout */
+        .navbar-custom .btn-outline-light {
+            border-color: #333;
+            color: #333;
+        }
+
+        .navbar-custom .btn-outline-light:hover {
+            background-color: #333;
+            color: #ffdaaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="container-fluid bg-light py-3 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="Logo" class="me-3" width="50">
+            <h3 class="m-0">{{ appName }}</h3>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="lancamento">Lançamento</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Referências
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="carteira">Carteira</a></li>
+                        <li><a class="dropdown-item" routerLink="carteira">Tipo Pagamento</a></li>
+                        <li><a class="dropdown-item" routerLink="carteira">Tipo Lançamento</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container-fluid content py-4">
+        <div class="bg-white p-4  shadow">
+          <app-toast></app-toast>
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 {{ appName }}. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+<!--div class="container" style="border: 1px red solid;">
+
+</div-->
+
+<!--div class="container geral">
   <header class="p-3 header">
       <div class="logo-container">
           <img src="assets/img/logo.png" alt="Ícone do App" class="logo">
-          <h1 class="m-0 app-name">{{ appName }}</h1>
+          <h1 class="fs-1 fs-md-3 fs-lg-4 m-0 app-name">{{ appName }}</h1>
       </div>
       
-      <button class="logout">Logout</button>
+      <button class="logout d-none d-sm-inline-block">Logout</button>
   </header>
 
-  <!--nav class="p-3 menu">
+  <nav class="p-3 menu">
       <a class="btn btn-menu" routerLink="lancamento">Lançamento</a>
       <a class="btn btn-menu" routerLink="home">Compras</a>
       <a class="btn btn-menu" routerLink="carteira">Carteira</a>
-  </nav-->
-  <!--nav class="navbar navbar-expand-lg navbar-light menu">
-      <a class="navbar-brand d-none" href="#">Seu App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-              <a class="btn btn-menu" routerLink="lancamento">Lançamento</a>
-          </li>
-          <li class="nav-item">
-              <a class="btn btn-menu" routerLink="home">Compras</a>
-          </li>
-          <li class="nav-item">
-              <a class="btn btn-menu" routerLink="carteira">Carteira</a>
-          </li>
-        </ul>
-      </div>
-    </nav nav-pills-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
+  </nav>
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light menu w-100">
+        <a class="navbar-brand " href="#">{{ appName }} 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="btn btn-menu" routerLink="lancamento">Lançamento</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-menu" routerLink="home">Compras</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-menu" routerLink="carteira">Carteira</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary menu w-100">
       <div class="container-fluid">
-        <a class="navbar-brand d-none" href="home">Organize-me</a>
+        <a class="navbar-brand d-inline-block d-sm-none " href="home">{{ appName }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +158,6 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" routerLink="carteira">Carteira</a></li>
                 <li><a class="dropdown-item" routerLink="carteira">Tipo Pagamento</a></li>
-                <!--li><hr class="dropdown-divider"></li-->
                 <li><a class="dropdown-item" routerLink="carteira">Tipo Lançamento</a></li>
               </ul>
             </li>
@@ -71,4 +175,4 @@
       <p class="m-0">&copy; {{ anoAtual }} {{ appName }}. Todos os direitos reservados.</p>
       </div>
   </footer>
-</div>
+</div-->

@@ -1,0 +1,21 @@
+.toast-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1050;
+    gap: 5px;
+  }
+  
+  .toast {
+    margin-bottom: 5px; /* Ajuste o espaçamento entre as mensagens */
+    position: relative; /* Para o botão de fechar ser posicionado corretamente */
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  

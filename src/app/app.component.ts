@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { ToastComponent } from './componentes/toast/toast.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , CommonModule, RouterModule],
+  imports: [RouterOutlet , CommonModule, RouterModule, ToastComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'front-meufacilitador';
+  title = 'Meu Facilitador';
 
-  appName = 'Organize-me';
+  appName = 'Meu Facilitador';
   anoAtual = 2025;
   timeoutId: any;
   
@@ -25,7 +26,3 @@ export class AppComponent {
     console.log(this.contas); // Apenas para testar se a variável foi inicializada corretamente
   }
 }
-
-//ngAfterViewInit() {
-//  $('#container-main').css({'min-height':'calc(100vh - 72px - 69px'})
-///}
