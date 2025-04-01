@@ -1,0 +1,5 @@
+select:focus {
+    /* Estilos para a div de opções quando aberta */
+    max-height: 50px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical, se necessário */
+  }

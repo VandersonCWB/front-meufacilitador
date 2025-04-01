@@ -17,7 +17,7 @@ export class ToastService {
 
     const currentToasts = this.toastSubject.value || [];
     const newToast = { id: (this.currentId++) +'', message, type };
-    this.toastSubject.next([...currentToasts.filter(t =>!(t.message === t.message && t.type === t.type )), newToast]);
+    this.toastSubject.next([...currentToasts.filter(t =>!(t.message === newToast.message && t.type === newToast.type )), newToast]);
 
     setTimeout(() => {
       this.removeToast(newToast);

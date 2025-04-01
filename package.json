@@ -9,8 +9,8 @@
     "build": "ng build --build-optimizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:dev": "ng build --configuration=development --base-href=/front-meufacilitador/",
-    "build:prod": "ng build --configuration=production --base-href=/front-meufacilitador/"
+    "build:dev": "ng build --configuration=development --base-href=/meufacilitador/",
+    "build:prod": "ng build --configuration=production --base-href=/meufacilitador/"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "dotenv": "^16.4.7",
     "ngx-currency": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
