@@ -21,7 +21,7 @@ export class ConsultaLancamentoComponent {
   lancamentos: ConsultaLancamentoModel[] = [];
   lancamentosFiltrados: ConsultaLancamentoModel[] = [];
   paginaAtual = 1;
-  itensPorPagina = 2;
+  itensPorPagina = 10;
   totalPaginas = 0;
   filtrosForm: FormGroup;
   tiposPagamento = ['Crédito', 'Débito', 'Dinheiro', 'Pix'];
