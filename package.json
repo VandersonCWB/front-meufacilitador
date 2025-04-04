@@ -9,8 +9,8 @@
     "build": "ng build --build-optimizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:dev": "ng build --configuration=development --base-href=/meufacilitador/",
-    "build:prod": "ng build --configuration=production --base-href=/meufacilitador/"
+    "build:dev": "ng build --configuration=development --base-href=/front-meufacilitador/",
+    "build:prod": "ng build --configuration=production --base-href=/front-meufacilitador/"
   },
   "private": true,
   "dependencies": {
